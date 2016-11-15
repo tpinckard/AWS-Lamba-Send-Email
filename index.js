@@ -14,6 +14,9 @@ var mailOptions = {
     text: 'Plaintext email content', // plaintext body
     html: '<b><h1>HTML Email Content</h1></b>' // html body
 };
+
+//Handler Code that you need to wrap AWS node functions in order to get called... this is what index.handler 
+// (the default lambda function handler) points to specifically
 exports.handler = (event, context, callback) => {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info){
